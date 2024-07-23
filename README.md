@@ -1,10 +1,9 @@
-# Groupware_orca
-<h1 style="color: #000000;"><b>👯‍♂👯‍♀️Orca</b></h1>
-![image](https://github.com/user-attachments/assets/e6f5bd7d-bb66-4662-a373-d33266da2e7d)
+<h1 style="color: #000000;"><b>Groupware_orca🐋</b></h1>
 
 <h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>😄본인 역할&nbsp;</b></h2>
 <ul style="list-style-type: disc;" data-ke-list-type="disc">
 <li><b>DB관리자</b></li>
+<li><b>전자결재 기능</b></li>
 </ul>
 
 <h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>⚙️ 개발 환경</b></h2>
@@ -38,9 +37,8 @@
 </div>
 
 
-
 <h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>🔖 담당기능 UI</b><b></b></h2>
-  
+
 
 
 <h2 style="color: #000000; text-align: start;" data-ke-size="size26">🎛️플로우 차트</h2>
