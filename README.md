@@ -23,17 +23,17 @@
 
 <h4>🛠 사용 툴 🛠</h4>
 <div style="white-space: nowrap;">
-  <img src='https://img.shields.io/badge/Apache_Tomcat-F8DC75?style=for-the-badge&logo=Apache-Tomcat&logoColor=white'>
-  <img src='https://img.shields.io/badge/Eclipse_Ide-2C2255?style=for-the-badge&logo=Eclipse-Ide&logoColor=white'>
+  <img src='https://img.shields.io/badge/intellij_Idea-2C2255?style=for-the-badge&logo=intellij-Idea&logoColor=white'>
   <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'>
     <img src='https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white'>
 </div>
 
-<h4>Framework & server</h4>
+<h4>Framework & server & library & API</h4>
 <div style="white-space: nowrap;">
-  <img src='https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=Spring-Security&logoColor=white'>
+  <img src='https://img.shields.io/badge/Apache_Tomcat-F8DC75?style=for-the-badge&logo=Apache-Tomcat&logoColor=white'>
   <img src='https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=spring&logoColor=white'>
-    <img src='https://img.shields.io/badge/Amazon_S3-569A31?style=for-the-badge&logo=Amazon-S3&logoColor=white'>
+  <img src='https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=Spring-Security&logoColor=white'>
+  <img src='https://img.shields.io/badge/Amazon_S3-569A31?style=for-the-badge&logo=Amazon-S3&logoColor=white'>
 </div>
 
 
