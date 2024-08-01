@@ -96,11 +96,14 @@
 - 나만의 결재선 목록
 - 나만의 결재선 삭제
 
-<h2 style="color: #000000; text-align: start;" data-ke-size="size26">🎛️플로우 차트</h2>
-<img src="/documentImg/전자결재 플로우차트.jpg">
 
 <h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>🗃️ERD</b></h2>
 <img src="/documentImg/전자결재 DB.jpg">
+
+
+<h2 style="color: #000000; text-align: start;" data-ke-size="size26">🎛️플로우 차트</h2>
+<img src="/documentImg/전자결재 플로우차트.jpg">
+
 
 <h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>🖼️ 화면</b><b></b></h2>
 
