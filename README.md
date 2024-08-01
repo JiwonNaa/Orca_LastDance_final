@@ -99,16 +99,17 @@
 
 
 <h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>🖼️ 화면</b><b></b></h2>
-<img src="/documentImg/docList.png">
-<img src="/documentImg/docWrite.png">
-<img src="/documentImg/docWrite-ref.png">
-<img src="/documentImg/doc_detail3.png">
-<img src="/documentImg/doc_detail4.png">
 
 <img src="/documentImg/temList-delete.jpg">
 <img src="/documentImg/temAdd.png">
 <img src="/documentImg/appr.png">
 <img src="/documentImg/myappr_list.png">
+
+<img src="/documentImg/docList.png">
+<img src="/documentImg/docWrite.png">
+<img src="/documentImg/docWrite-ref.png">
+<img src="/documentImg/doc_detail3.png">
+<img src="/documentImg/doc_detail4.png">
 
 
 <h2 style="color: #000000; text-align: start;" data-ke-size="size26">🎛️플로우 차트</h2>
