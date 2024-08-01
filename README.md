@@ -1,5 +1,9 @@
 <h1 style="color: #000000;"><b>Groupware_orca🐋</b></h1>
 
+
+<h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>📅개발 일정</b></h2>
+2024-06-25 ~ 2024-07-22
+
 <h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>😄본인 역할</b></h2>
 <ul style="list-style-type: disc;" data-ke-list-type="disc">
 <li><b>DB관리자</b></li>
@@ -118,8 +122,6 @@
 <img src="/documentImg/doc_detail3.png">
 <img src="/documentImg/doc_detail4.png">
 
-<h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>📅개발 일정</b></h2>
-2024-06-25 ~ 2024-07-22
 
 <h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>🤓느낀점 및 회고</b></h2>
     
