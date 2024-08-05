@@ -31,6 +31,14 @@ public class DeptLoginFilter extends OncePerRequestFilter {
         } else if (requestURI.startsWith("/orca/managementSupport/") && loginDeptVo.getDeptCode() != 3) {
             response.sendRedirect(request.getContextPath() + "/orca/home");
             return;
+        } else if (requestURI.startsWith("/orca/apprline/") && loginDeptVo.getDeptCode() != 3) {
+            // 전자결재 경영지원팀 권한 체크
+            response.sendRedirect(request.getContextPath() + "/orca/home");
+            return;
+        } else if (requestURI.startsWith("/orca/template/") && loginDeptVo.getDeptCode() != 3) {
+            // 전자결재 경영지원팀 권한 체크
+            response.sendRedirect(request.getContextPath() + "/orca/home");
+            return;
         } else if (requestURI.startsWith("/orca/accountingDivision/") && loginDeptVo.getDeptCode() != 4) {
             response.sendRedirect(request.getContextPath() + "/orca/home");
             return;

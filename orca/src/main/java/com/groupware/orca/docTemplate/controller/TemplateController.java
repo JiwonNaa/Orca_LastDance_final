@@ -1,5 +1,6 @@
 package com.groupware.orca.docTemplate.controller;
 
+import com.groupware.orca.common.vo.DepartmentVo;
 import com.groupware.orca.docTemplate.service.TemplateService;
 import com.groupware.orca.docTemplate.vo.TemplateVo;
 import com.groupware.orca.user.vo.UserVo;
@@ -45,9 +46,25 @@ public class TemplateController {
     }
     // 결재양식 목록
     @GetMapping("list")
-    public String getTemplateList(Model model, HttpSession httpSession){
+    public String getTemplateList(Model model, HttpSession httpSession) {
+        // 세션에서 로그인 정보 가져오기
+        DepartmentVo loginDeptVo = (DepartmentVo) httpSession.getAttribute("loginDeptVo");
+
+        // 로그인 여부 확인
+        if (loginDeptVo == null) {
+            return "redirect:/orca/user/showDepartmentLogin";
+        }
+
+        // 권한 체크
+        if (loginDeptVo.getDeptCode() != 3) {
+            return "redirect:/orca/home";
+        }
+
+        // 권한이 확인되면 결재양식 목록을 모델에 추가
         List<TemplateVo> templateList = service.getTemplateList();
         model.addAttribute("templateList", templateList);
+
+        // 결재양식 목록을 표시할 JSP/Thymeleaf 페이지 이름 반환
         return "template/list";
     }
 

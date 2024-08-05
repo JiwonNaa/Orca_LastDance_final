@@ -3,6 +3,7 @@ package com.groupware.orca.approvalLine.controller;
 import com.groupware.orca.approvalLine.service.ApprovalLineService;
 import com.groupware.orca.approvalLine.vo.ApprovalLineVo;
 import com.groupware.orca.approvalLine.vo.ApproverVo;
+import com.groupware.orca.common.vo.DepartmentVo;
 import com.groupware.orca.docTemplate.vo.TemplateVo;
 import com.groupware.orca.user.vo.UserVo;
 import jakarta.servlet.http.HttpSession;
@@ -70,6 +71,20 @@ public class ApprovalLineController {
     // 세션 - 관리자 아니면 나가세요 하기
     @GetMapping("list")
     public String getApprLines(Model model, HttpSession httpSession) {
+
+        // 세션에서 로그인 정보 가져오기
+        DepartmentVo loginDeptVo = (DepartmentVo) httpSession.getAttribute("loginDeptVo");
+
+        // 로그인 여부 확인
+        if (loginDeptVo == null) {
+            return "redirect:/orca/user/showDepartmentLogin";
+        }
+
+        // 권한 체크
+        if (loginDeptVo.getDeptCode() != 3) {
+            return "redirect:/orca/home";
+        }
+
         List<ApprovalLineVo> approvalLines = service.getApprovalLines();
         model.addAttribute("approvalLines", approvalLines);
         return "apprline/list";
