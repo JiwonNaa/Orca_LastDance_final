@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("orca/apprline")
@@ -83,10 +85,19 @@ public class ApprovalLineController {
     }
 
     // 결재선 삭제
-    @PostMapping("delete")
-    public String deleteApprLine(@RequestParam("apprLineNo") int apprLineNo) {
+    @DeleteMapping("delete")
+    public ResponseEntity<Map<String, String>> deleteApprLine(@RequestBody Map<String, Integer> requestBody) {
+        int apprLineNo = requestBody.get("apprLineNo");
         int result = service.deleteApprLine(apprLineNo);
-        return "redirect:/orca/apprline/list";
+        Map<String, String> response = new HashMap<>();
+        if (result > 0) {
+            response.put("message", "결재선 삭제에 성공했습니다.");
+            return ResponseEntity.ok(response);
+        } else {
+            response.put("message", "결재선 삭제에 실패했습니다.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+
     }
 
     // 결재자, 합의자

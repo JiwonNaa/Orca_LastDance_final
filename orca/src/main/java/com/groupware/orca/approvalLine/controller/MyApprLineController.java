@@ -6,11 +6,15 @@ import com.groupware.orca.docTemplate.vo.TemplateVo;
 import com.groupware.orca.user.vo.UserVo;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("orca/myapprline")
@@ -77,10 +81,26 @@ public class MyApprLineController {
     }
 
     // 결재선 삭제
-    @PostMapping("delete")
-    public String deleteApprLine(@RequestParam("apprLineNo") int apprLineNo, HttpSession httpSession) {
+    @DeleteMapping("delete")
+    public ResponseEntity<Map<String, String>> deleteApprLine(@RequestBody Map<String, Integer> requestBody, HttpSession httpSession) {
+        int apprLineNo = requestBody.get("apprLineNo");
         int loginUserNo = ((UserVo) httpSession.getAttribute("loginUserVo")).getEmpNo();
-        service.deleteApprLine(apprLineNo, loginUserNo);
-        return "redirect:/orca/myapprline/list";
+
+        System.out.println("loginUserNo = " + loginUserNo);
+        System.out.println("apprLineNo = " + apprLineNo);
+        
+        int result = service.deleteApprLine(apprLineNo, loginUserNo);
+
+        System.out.println("result = " + result);
+
+        Map<String, String> response = new HashMap<>();
+        if (result > 0) {
+            response.put("message", "결재선 삭제에 성공했습니다.");
+            return ResponseEntity.ok(response);
+        } else {
+            response.put("message", "결재선 삭제에 실패했습니다.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+
     }
 }

@@ -1,3 +1,4 @@
+// 문서 삭제
  function deleteDocument(element) {
         var docNo = $(element).data('doc-no');
         if (confirm('문서를 삭제하시겠습니까?')) {

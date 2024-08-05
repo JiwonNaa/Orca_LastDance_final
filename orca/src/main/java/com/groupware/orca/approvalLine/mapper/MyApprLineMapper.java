@@ -86,5 +86,5 @@ public interface MyApprLineMapper {
             WHERE APPR_LINE_NO = #{apprLineNo}
               AND WRITER_NO = #{loginUserNo}
             """)
-    void deleteApprLine(@Param("apprLineNo") int apprLineNo, @Param("loginUserNo") int loginUserNo);
+    int deleteApprLine(@Param("apprLineNo") int apprLineNo, @Param("loginUserNo") int loginUserNo);
 }

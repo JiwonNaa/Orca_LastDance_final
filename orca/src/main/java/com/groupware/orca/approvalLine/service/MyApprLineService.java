@@ -54,8 +54,9 @@ public class MyApprLineService {
         return approvalLines;
     }
     // 결재선 삭제
-    public void deleteApprLine(int apprLineNo, int loginUserNo) {
-        dao.deleteApprLine(apprLineNo, loginUserNo);
+    public int deleteApprLine(int apprLineNo, int loginUserNo) {
+        return dao.deleteApprLine(apprLineNo, loginUserNo);
+
     }
 
 }

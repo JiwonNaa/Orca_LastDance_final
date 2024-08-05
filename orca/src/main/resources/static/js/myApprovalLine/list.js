@@ -44,17 +44,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
         $.ajax({
             url: '/orca/myapprline/delete',
-            method: 'POST',
-            data: { apprLineNo: apprLineNo },
-            success: function(data) {
-                alert("결재선이 삭제 되었습니다.");
-                console.log(data);
-                location.reload();
+            method: 'DELETE',
+            contentType: 'application/json',
+            data: JSON.stringify({ apprLineNo: apprLineNo }),
+            success: function(response) {
+               // 요청이 성공했을 경우, 문서 목록 페이지로 이동
+               alert(response.message);
+               location.reload();
             },
-            error: function(error) {
-                alert("결재선 삭제 중 오류가 발생했습니다.");
-                console.log(error);
-            }
+            error: function(xhr) {
+               // 요청이 실패했을 경우, 오류 메시지를 표시
+               alert(xhr.responseJSON.message);
+           }
         });
     });
 

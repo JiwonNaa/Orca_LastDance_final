@@ -54,8 +54,9 @@ public class MyApprLineDao {
   }
 
     // 결재선 삭제
-    public void deleteApprLine(int apprLineNo, int loginUserNo) {
-        mapper.deleteApprLine(apprLineNo, loginUserNo);
+    public int deleteApprLine(int apprLineNo, int loginUserNo) {
+        return mapper.deleteApprLine(apprLineNo, loginUserNo);
+
     }
 
 }
