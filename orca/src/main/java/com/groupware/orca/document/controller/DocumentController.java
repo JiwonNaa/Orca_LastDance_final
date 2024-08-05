@@ -27,9 +27,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Controller
 @RequestMapping("orca/document")
@@ -298,11 +296,20 @@ public class DocumentController {
     }
 
     // 결재 기안 철회(아무도 결재승인 안했을 경우 가능)
-    @PostMapping("delete")
-    public String deleteDocumentByNo(int docNo, HttpSession httpSession){
+    @DeleteMapping("delete")
+    public ResponseEntity<Map<String, String>>  deleteDocumentByNo(@RequestBody Map<String, Integer> requestBody, HttpSession httpSession){
+        int docNo = requestBody.get("docNo");
+        System.out.println("docNo = " + docNo);
         int loginUserNo = ((UserVo) httpSession.getAttribute("loginUserVo")).getEmpNo();
         int result = service.deleteDocumentByNo(docNo, loginUserNo);
 
-        return "redirect:/orca/document/list";
+        Map<String, String> response = new HashMap<>();
+        if (result > 0) {
+            response.put("message", "문서 삭제에 성공했습니다.");
+            return ResponseEntity.ok(response);
+        } else {
+            response.put("message", "문서 삭제에 실패했습니다.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
     }
 }
