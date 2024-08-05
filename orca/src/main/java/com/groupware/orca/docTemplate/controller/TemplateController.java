@@ -11,7 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("orca/template")
@@ -112,11 +114,20 @@ public class TemplateController {
         }
     }
 
-
     // 결재양식 삭제
-    @PostMapping("delete")
-    public String deleteTemplate(int templateNo, HttpSession httpSession) {
+    @DeleteMapping("delete")
+    public ResponseEntity<Map<String, String>> deleteTemplate(@RequestBody Map<String, Integer> requestBody, HttpSession httpSession) {
+        int templateNo = requestBody.get("templateNo");
+
         int result = service.deleteTemplate(templateNo);
-        return "redirect:/orca/template/list";
+
+        Map<String, String> response = new HashMap<>();
+        if (result > 0) {
+            response.put("message", "문서양식 삭제에 성공했습니다.");
+            return ResponseEntity.ok(response);
+        } else {
+            response.put("message", "문서양식 삭제에 실패했습니다.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
     }
 }

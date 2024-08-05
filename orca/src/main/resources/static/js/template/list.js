@@ -126,16 +126,19 @@ function setDeleteButtonListeners() {
             console.log('Template No:', templateNo);
 
             $.ajax({
-                url: '/orca/template/delete?templateNo=' + templateNo,
-                method: 'POST',
-                success: function(data) {
-                    console.log('Template delete:', data);
-                    alert("결재양식이 삭제 되었습니다.");
-                    location.reload();
-                },
-                error: function(e) {
-                    alert("결재양식 삭제 중 오류가 발생했습니다.");
-                }
+                url: '/orca/template/delete',
+                method: 'DELETE',
+                contentType: 'application/json',
+                data: JSON.stringify({ templateNo: templateNo }),
+                success: function(response) {
+                // 요청이 성공했을 경우, 문서 목록 페이지로 이동
+                alert(response.message);
+                location.reload();
+            },
+            error: function(xhr) {
+                // 요청이 실패했을 경우, 오류 메시지를 표시
+                alert(xhr.responseJSON.message);
+            }
             });
         });
     });
