@@ -25,12 +25,10 @@ public class TemplateController {
 
     // 관리자(경영지원부서)
     // 결재양식 등록 화면
-
     @GetMapping("add")
     public String addTemplate() {
         return "template/add";
     }
-
 
     @GetMapping("search")
     public String searchTemplateList() {
@@ -132,7 +130,7 @@ public class TemplateController {
     }
 
     // 결재양식 삭제
-    @DeleteMapping("delete")
+    @PutMapping("delete")
     public ResponseEntity<Map<String, String>> deleteTemplate(@RequestBody Map<String, Integer> requestBody, HttpSession httpSession) {
         int templateNo = requestBody.get("templateNo");
 

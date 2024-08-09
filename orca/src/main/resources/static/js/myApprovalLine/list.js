@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         $.ajax({
             url: '/orca/myapprline/delete',
-            method: 'DELETE',
+            method: 'PUT',
             contentType: 'application/json',
             data: JSON.stringify({ apprLineNo: apprLineNo }),
             success: function(response) {

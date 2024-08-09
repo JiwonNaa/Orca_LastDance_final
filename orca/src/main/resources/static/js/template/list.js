@@ -127,7 +127,7 @@ function setDeleteButtonListeners() {
 
             $.ajax({
                 url: '/orca/template/delete',
-                method: 'DELETE',
+                method: 'PUT',
                 contentType: 'application/json',
                 data: JSON.stringify({ templateNo: templateNo }),
                 success: function(response) {

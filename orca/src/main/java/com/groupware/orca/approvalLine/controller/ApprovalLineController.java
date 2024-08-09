@@ -100,7 +100,7 @@ public class ApprovalLineController {
     }
 
     // 결재선 삭제
-    @DeleteMapping("delete")
+    @PutMapping("delete")
     public ResponseEntity<Map<String, String>> deleteApprLine(@RequestBody Map<String, Integer> requestBody) {
         int apprLineNo = requestBody.get("apprLineNo");
         int result = service.deleteApprLine(apprLineNo);

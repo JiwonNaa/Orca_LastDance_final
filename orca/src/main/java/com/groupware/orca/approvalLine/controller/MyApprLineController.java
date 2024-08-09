@@ -81,7 +81,7 @@ public class MyApprLineController {
     }
 
     // 결재선 삭제
-    @DeleteMapping("delete")
+    @PutMapping("delete")
     public ResponseEntity<Map<String, String>> deleteApprLine(@RequestBody Map<String, Integer> requestBody, HttpSession httpSession) {
         int apprLineNo = requestBody.get("apprLineNo");
         int loginUserNo = ((UserVo) httpSession.getAttribute("loginUserVo")).getEmpNo();

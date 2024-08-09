@@ -4,7 +4,7 @@
         if (confirm('문서를 삭제하시겠습니까?')) {
             $.ajax({
                 url: `/orca/document/delete`,
-                type: 'DELETE',
+                type: 'PUT',
                 contentType: 'application/json',
                 data: JSON.stringify({ docNo: docNo }),
                 success: function(response) {

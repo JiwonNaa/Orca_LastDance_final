@@ -296,7 +296,7 @@ public class DocumentController {
     }
 
     // 결재 기안 철회(아무도 결재승인 안했을 경우 가능)
-    @DeleteMapping("delete")
+    @PutMapping("delete")
     public ResponseEntity<Map<String, String>>  deleteDocumentByNo(@RequestBody Map<String, Integer> requestBody, HttpSession httpSession){
         int docNo = requestBody.get("docNo");
         System.out.println("docNo = " + docNo);
